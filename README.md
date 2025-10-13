@@ -1,39 +1,38 @@
-# Agenda-de-Contatos 📖
-- Projeto de ARQDMO1 - Dispositivos Móveis 1
+# 📖 Agenda de Contatos
+- Projeto da disciplina ARQDMO1 –Dispositivos Móveis I
 - Professor: Henrique Galati
-- IFSP - Campus Araraquara
-- Análise e Desenvolvimento de Sistemas
+- Instituição: IFSP - Campus Araraquara
+- Curso: Análise e Desenvolvimento de Sistemas
 
-O projeto é um aplicativo Android desenvolvido em Kotlin que tem como objetivo divulgar pequenos serviços e comércios locais do bairro.
+## 💡 Sobre o Projeto
+O Agenda de Contatos é um aplicativo Android desenvolvido em Kotlin que tem como objetivo divulgar pequenos serviços e comércios locais do bairro, facilitando o acesso a informações de contato e localização.
 
-🚀 Funcionalidades
+O app oferece uma experiência simples, moderna e intuitiva, integrando recursos nativos do Android e boas práticas de desenvolvimento mobile.
 
-📋 Lista de Estabelecimentos:
-Exibe uma lista fixa de comércios e prestadores de serviço da região.
+## 🚀 Funcionalidades
+📋 Lista de Estabelecimentos: Exibe uma lista fixa de comércios e prestadores de serviços da região.
 
-🔍 Detalhes do Estabelecimento:
-Mostra informações como nome, descrição, endereço, telefone, e site.
+🔍 Detalhes do Estabelecimento: Mostra informações completas, como nome, descrição, endereço, telefone e site.
 
-🌓 Modo Claro e Escuro:
-Interface adaptável automaticamente ao modo do sistema (Day/Night Mode).
+☎️ Integração com Recursos do Sistema: Permite realizar chamadas telefônicas e abrir sites diretamente pelo app.
 
-🌐 Suporte a Múltiplos Idiomas:
-O app está disponível em português e inglês, com base na configuração de idioma do dispositivo (internacionalização).
+🌓 Modo Claro e Escuro: Interface que se adapta automaticamente ao modo de tema do sistema (Day/Night Mode).
+
+🌐 Suporte a Múltiplos Idiomas: Disponível em português e inglês, conforme o idioma configurado no dispositivo.
 
 🧩 Tecnologias e Recursos Utilizados
-
 Linguagem: Kotlin
 
 IDE: Android Studio
 
-Componentes Principais:
+Principais Componentes e Conceitos:
 
 ListView com Adapter personalizado
 
-ViewBinding para acesso seguro às views
+ViewBinding para acesso seguro e eficiente às Views
 
-Intents Explícitas e Implícitas para navegação e chamadas de sistema
+Intents explícitas e implícitas para navegação e ações do sistema
 
-Internacionalização com arquivos strings.xml em múltiplos idiomas
+Internacionalização (i18n) com múltiplos arquivos strings.xml
 
-Modo Dia/Noite com temas definidos em themes.xml
+Temas dinâmicos (Day/Night) configurados em themes.xml
