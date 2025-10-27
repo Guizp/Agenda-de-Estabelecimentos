@@ -5,25 +5,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import com.guilhermenetti.agendaapp.databinding.ItemContatoBinding
-import com.guilhermenetti.agendaapp.model.Contato
+import com.guilhermenetti.agendaapp.databinding.ItemEstabelecimentoBinding
+import com.guilhermenetti.agendaapp.model.Estabelecimentos
 
-class ContatoAdapter(
+class EstabelecimentoAdapter(
     private val context: Context,
-    private val lista: List<Contato>
-) : ArrayAdapter<Contato>(context, 0, lista) {
+    private val lista: List<Estabelecimentos>
+) : ArrayAdapter<Estabelecimentos>(context, 0, lista) {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        val binding: ItemContatoBinding
+        val binding: ItemEstabelecimentoBinding
         val itemView: View
 
         if (convertView == null) {
-            binding = ItemContatoBinding.inflate(LayoutInflater.from(context), parent, false)
+            binding = ItemEstabelecimentoBinding.inflate(LayoutInflater.from(context), parent, false)
             itemView = binding.root
             itemView.tag = binding
         } else {
             itemView = convertView
-            binding = itemView.tag as ItemContatoBinding
+            binding = itemView.tag as ItemEstabelecimentoBinding
         }
 
         val contato = lista[position]
@@ -31,7 +31,7 @@ class ContatoAdapter(
         binding.imgFoto.setImageResource(contato.foto)
         binding.tvNome.text = contato.nome
         binding.tvTelefone.text = contato.telefone
-        binding.tvEmail.text = contato.email
+        binding.tvLocalizacao.text = contato.localizacao
 
         return itemView
     }

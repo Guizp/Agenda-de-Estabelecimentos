@@ -13,7 +13,7 @@
         android:theme="@style/Theme.AgendaApp"
         tools:targetApi="31">
         <activity
-            android:name=".ui.DetalheContatoActivity"
+            android:name=".ui.DetalheEstabelecimentoActivity"
             android:exported="true" />
         <activity
             android:name=".ui.MainActivity"

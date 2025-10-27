@@ -18,7 +18,7 @@
         android:id="@+id/tvNome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nome do Contato"
+        android:text="Nome do Estabelecimento"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="#333"
@@ -31,10 +31,10 @@
         android:textSize="16sp"
         android:layout_marginBottom="4dp" />
     <TextView
-        android:id="@+id/tvEmail"
+        android:id="@+id/tvLocalizacao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="email@exemplo.com"
+        android:text="Rua, bairro"
         android:textSize="16sp"
         android:textColor="#555"
         android:layout_marginBottom="32dp" />
@@ -49,10 +49,10 @@
         android:elevation="4dp"
         android:layout_marginBottom="16dp" />
     <Button
-        android:id="@+id/btnEmail"
+        android:id="@+id/btnLocalizacao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enviar email para este contato"
+        android:text="Encontrar no maps"
         android:backgroundTint="@android:color/holo_green_light"
         android:textColor="#000"
         android:textStyle="bold"
