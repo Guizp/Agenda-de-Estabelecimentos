@@ -1,11 +1,11 @@
-# 📖 Agenda de Contatos
+# 📖 Agenda de Estabelecimentos
 - Projeto da disciplina ARQDMO1 –Dispositivos Móveis I
 - Professor: Henrique Galati
 - Instituição: IFSP - Campus Araraquara
 - Curso: Análise e Desenvolvimento de Sistemas
 
 ## 💡 Sobre o Projeto
-O Agenda de Contatos é um aplicativo Android desenvolvido em Kotlin que tem como objetivo divulgar pequenos serviços e comércios locais do bairro, facilitando o acesso a informações de contato e localização.
+O Agenda de Estabelecimentos é um aplicativo Android desenvolvido em Kotlin que tem como objetivo divulgar pequenos serviços e comércios locais do bairro, facilitando o acesso a informações de contato e localização.
 
 O app oferece uma experiência simples, moderna e intuitiva, integrando recursos nativos do Android e boas práticas de desenvolvimento mobile.
 
