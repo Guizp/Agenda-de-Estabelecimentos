@@ -36,3 +36,26 @@ Intents explícitas e implícitas para navegação e ações do sistema
 Internacionalização (i18n) com múltiplos arquivos strings.xml
 
 Temas dinâmicos (Day/Night) configurados em themes.xml
+
+## 🖼️ Capturas de Tela
+Tema Claro:
+
+<img width="398" height="881" alt="ModoClaro" src="https://github.com/user-attachments/assets/11b19957-a9b5-4374-893b-19b38036a097" />
+
+Tema Escuro:
+
+<img width="398" height="883" alt="ModoEscuro" src="https://github.com/user-attachments/assets/ff3ae437-e35f-484a-878d-87bf4e8f66a5" />
+
+Português:
+
+<img width="398" height="881" alt="Português(Brasil)" src="https://github.com/user-attachments/assets/44d0a7cc-4861-4f1f-98cd-523bed4264ca" />
+
+Inglês:
+
+<img width="398" height="890" alt="Inglês" src="https://github.com/user-attachments/assets/d1fc2a23-102c-416e-8785-1a8cbf6b3aa9" />
+
+## 📹 Vídeo de Demonstração do App
+
+https://github.com/user-attachments/assets/5561b464-9ae4-4cb1-9fca-241532c2a19f
+
+
