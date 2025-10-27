@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.2"
-        android:text="Agenda de Estabelecimentos"
+        android:text="@string/establishment_schedule"
         android:textSize="36sp"
         android:textStyle="bold"
         android:textColor="#333"

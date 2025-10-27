@@ -22,7 +22,7 @@
             android:id="@+id/tvNome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nome do Contato"
+            android:text="@string/name_of_establishment"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -36,7 +36,7 @@
             android:id="@+id/tvLocalizacao"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Rua, bairro"
+            android:text="@string/street_avenue_neighborhood"
             android:textColor="#555" />
 
     </LinearLayout>
