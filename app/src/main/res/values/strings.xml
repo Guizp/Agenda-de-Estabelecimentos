@@ -6,4 +6,6 @@
     <string name="find_on_maps">Find on maps</string>
     <string name="back">Back</string>
     <string name="establishment_schedule">Establishment Schedule</string>
+    <string name="add_establishment">"Establishment Add "</string>
+    <string name="filter_by_name">Filter by Name</string>
 </resources>

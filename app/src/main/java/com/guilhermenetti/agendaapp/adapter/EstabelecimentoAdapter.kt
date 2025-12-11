@@ -1,39 +1,42 @@
 package com.guilhermenetti.agendaapp.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
+import androidx.core.net.toUri
+import androidx.recyclerview.widget.RecyclerView
 import com.guilhermenetti.agendaapp.databinding.ItemEstabelecimentoBinding
 import com.guilhermenetti.agendaapp.model.Estabelecimentos
 
 class EstabelecimentoAdapter(
-    private val context: Context,
-    private val lista: List<Estabelecimentos>
-) : ArrayAdapter<Estabelecimentos>(context, 0, lista) {
+    private var estabelecimentos: List<Estabelecimentos>,
+    private val onClick: (Estabelecimentos) -> Unit
+) : RecyclerView.Adapter<EstabelecimentoAdapter.ViewHolder>() {
 
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        val binding: ItemEstabelecimentoBinding
-        val itemView: View
-
-        if (convertView == null) {
-            binding = ItemEstabelecimentoBinding.inflate(LayoutInflater.from(context), parent, false)
-            itemView = binding.root
-            itemView.tag = binding
-        } else {
-            itemView = convertView
-            binding = itemView.tag as ItemEstabelecimentoBinding
-        }
-
-        val contato = lista[position]
-
-        binding.imgFoto.setImageResource(contato.foto)
-        binding.tvNome.text = contato.nome
-        binding.tvTelefone.text = contato.telefone
-        binding.tvLocalizacao.text = contato.localizacao
-
-        return itemView
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val binding = ItemEstabelecimentoBinding.inflate(
+            LayoutInflater.from(parent.context), parent, false
+        )
+        return ViewHolder(binding)
     }
 
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(estabelecimentos[position])
+    }
+
+    override fun getItemCount(): Int = estabelecimentos.size
+
+    fun updateLista(novosEstabelecimentos: List<Estabelecimentos>) {
+        this.estabelecimentos = novosEstabelecimentos
+        notifyDataSetChanged()
+    }
+
+    inner class ViewHolder(val binding: ItemEstabelecimentoBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(estabelecimentos: Estabelecimentos) {
+            binding.imgFoto.setImageURI(estabelecimentos.foto.toUri())
+            binding.tvNome.text = estabelecimentos.nome
+            binding.tvTelefone.text = estabelecimentos.telefone
+            binding.tvLocalizacao.text = estabelecimentos.localizacao
+            binding.root.setOnClickListener { onClick(estabelecimentos) }
+        }
+    }
 }

@@ -1,73 +1,88 @@
 package com.guilhermenetti.agendaapp.ui
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.guilhermenetti.agendaapp.model.Estabelecimentos
 import com.guilhermenetti.agendaapp.adapter.EstabelecimentoAdapter
 import com.guilhermenetti.agendaapp.R
+import com.guilhermenetti.agendaapp.data.db.AgendaDatabase
 import com.guilhermenetti.agendaapp.databinding.ActivityMainBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private lateinit var estabelecimentos: List<Estabelecimentos>
+    private lateinit var estabelecimentos: MutableList<Estabelecimentos>
+    private lateinit var adapter: EstabelecimentoAdapter
+    private lateinit var launcherCadastro: ActivityResultLauncher<Intent>
+    private lateinit var db: AgendaDatabase
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         loadData()
-        setupViews()
+        setupRecyclerView()
+        setupLauncherCadastro()
         setupListeners()
     }
     fun loadData(){
-        estabelecimentos = listOf(
-            Estabelecimentos(
-                R.drawable.tayrona,
-                "Tayrona",
-                "(16) 99737-9113",
-                "R. Maurício Galli, 446 - Vila Sedenho"
-            ),
-            Estabelecimentos(
-                R.drawable.mabo,
-                "Mabô",
-                "(16) 99377-6336",
-                "Av. Irmã Antônia de Arruda Camargo, 331 - Vila Harmonia"
-            ),
-            Estabelecimentos(
-                R.drawable.bossanova,
-                "Bossa Nova",
-                "(16) 99964-4426",
-                "Av. Queiroz Filho, 347 - Vila Sedenho"
-            ),
-            Estabelecimentos(
-                R.drawable.consertabikes,
-                "Conserta Bikes",
-                "(16) 99779-9927",
-                "Av. Irmã de Antonia, Av. Irmã Antônia de Arruda Camargo, 370 - Jardim Vale das Rosas"
-            ),
-            Estabelecimentos(
-                R.drawable.flor,
-                "Por Onde Flor",
-                "(16) 3461-3472",
-                "Av. Luís Alberto, 938 - Vila Velosa"
-            ),
-            Estabelecimentos(
-                R.drawable.gastro,
-                "Gastro Vita",
-                "(16) 3324-9000",
-                "Av. José Ziliolli, 807 - Vila Sedenho"
-            )
-        ).sortedBy { it.nome }
+        estabelecimentos = mutableListOf()
+        db = AgendaDatabase.getInstance(this)
+        lifecycleScope.launch(Dispatchers.IO) {
+            estabelecimentos = db.estabelecimentoDao().listarTodos().toMutableList()
+            withContext(Dispatchers.Main) {
+                adapter.updateLista(estabelecimentos)
+            }
+        }
     }
-    fun setupViews(){
-        val adapter = EstabelecimentoAdapter(this, estabelecimentos)
-        binding.listViewEstabelecimentos.adapter = adapter
-    }
-    fun setupListeners(){
-        binding.listViewEstabelecimentos.setOnItemClickListener { _, _, position, _ ->
+    private fun setupRecyclerView() {
+        adapter = EstabelecimentoAdapter(estabelecimentos) { estabelecimento ->
             val intent = Intent(this, DetalheEstabelecimentoActivity::class.java)
-            intent.putExtra("estabelecimentos", estabelecimentos[position])
+            intent.putExtra("estabelecimento", estabelecimento)
             startActivity(intent)
         }
+        binding.listViewEstabelecimentos.apply {
+            layoutManager = LinearLayoutManager(this@MainActivity)
+            adapter = this@MainActivity.adapter
+            addItemDecoration(
+                DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
+            )
+        }
+    }
+    private fun setupLauncherCadastro() {
+        launcherCadastro = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                loadData()
+            }
+        }
+    }
+    private fun setupListeners() {
+        binding.btnAdicionar.setOnClickListener {
+            val intent = Intent(this, CadastroContatoActivity::class.java)
+            launcherCadastro.launch(intent)
+        }
+        binding.edtFiltro.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                val filtro = s.toString().lowercase()
+                val filtrados = estabelecimentos.filter {
+                    it.nome.lowercase().contains(filtro)
+                }
+                adapter.updateLista(filtrados)
+            }
+            override fun afterTextChanged(s: Editable?) {}
+        })
     }
 }

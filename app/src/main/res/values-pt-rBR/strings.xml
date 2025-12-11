@@ -7,4 +7,6 @@
     <string name="find_on_maps">Encontrar no maps</string>
     <string name="back">Voltar</string>
     <string name="establishment_schedule">Agenda de Estabelecimentos</string>
+    <string name="add_establishment">Adicionar Estabelecimento</string>
+    <string name="filter_by_name">Filtrar por nome</string>
 </resources>
