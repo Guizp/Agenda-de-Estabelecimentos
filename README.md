@@ -58,8 +58,8 @@ Inglês:
 
 <img width="401" height="890" alt="IdiomaIngles" src="https://github.com/user-attachments/assets/288f3486-fcf0-4151-9db0-d526b0b321ca" />
 
-## 📹 Vídeo de Demonstração do App
+## 📹 Vídeos de Demonstração do App
 
-https://github.com/user-attachments/assets/5561b464-9ae4-4cb1-9fca-241532c2a19f
+
 
 
