@@ -39,17 +39,22 @@ Temas dinâmicos (Day/Night) configurados em themes.xml
 
 ## 🖼️ Capturas de Tela
 Tema Claro:
+
+
 <img width="396" height="890" alt="ModoClaro" src="https://github.com/user-attachments/assets/b2e13635-3102-4f6d-8b81-eeaf54bdf3bd" />
 
 Tema Escuro:
+
 
 <img width="401" height="883" alt="ModoEscuro" src="https://github.com/user-attachments/assets/832f2cae-6223-40b4-8e51-d1b4852e9dde" />
 
 Português:
 
+
 <img width="398" height="888" alt="IdiomaPortugues" src="https://github.com/user-attachments/assets/8bcd0c7c-b470-4c0b-a229-82f915b24dda" />
 
 Inglês:
+
 
 <img width="401" height="890" alt="IdiomaIngles" src="https://github.com/user-attachments/assets/288f3486-fcf0-4151-9db0-d526b0b321ca" />
 
