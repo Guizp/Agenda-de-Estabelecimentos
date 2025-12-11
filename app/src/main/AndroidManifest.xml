@@ -16,6 +16,9 @@
             android:name=".ui.DetalheEstabelecimentoActivity"
             android:exported="true" />
         <activity
+            android:name=".ui.CadastroEstabelecimentoActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>

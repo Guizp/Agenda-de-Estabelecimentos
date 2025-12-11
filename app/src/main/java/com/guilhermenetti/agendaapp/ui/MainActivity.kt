@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
     }
     private fun setupListeners() {
         binding.btnAdicionar.setOnClickListener {
-            val intent = Intent(this, CadastroContatoActivity::class.java)
+            val intent = Intent(this, CadastroEstabelecimentoActivity::class.java)
             launcherCadastro.launch(intent)
         }
         binding.edtFiltro.addTextChangedListener(object : TextWatcher {

@@ -15,7 +15,7 @@ import com.guilhermenetti.agendaapp.model.Estabelecimentos
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class CadastroContatoActivity : AppCompatActivity() {
+class CadastroEstabelecimentoActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCadastroBinding
     private lateinit var launcherGaleria: ActivityResultLauncher<Array<String>>
     private lateinit var uriSelecionada: String

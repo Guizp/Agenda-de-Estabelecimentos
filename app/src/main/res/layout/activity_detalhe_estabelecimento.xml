@@ -57,7 +57,7 @@
         android:id="@+id/btnLigar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/call_this_contact"
+        android:text="@string/call_this_establishment"
         android:backgroundTint="@android:color/holo_green_light"
         android:textColor="#000"
         android:textStyle="bold"

@@ -3,10 +3,13 @@
     <string name="app_name">Aplicativo Agenda</string>
     <string name="name_of_establishment">Nome do Estabelecimento</string>
     <string name="street_avenue_neighborhood">Rua/Avenida - Bairro</string>
-    <string name="call_this_contact">Ligar para este contato</string>
+    <string name="call_this_establishment">Ligar para este Estabelecimento</string>
     <string name="find_on_maps">Encontrar no maps</string>
     <string name="back">Voltar</string>
     <string name="establishment_schedule">Agenda de Estabelecimentos</string>
     <string name="add_establishment">Adicionar Estabelecimento</string>
     <string name="filter_by_name">Filtrar por nome</string>
+    <string name="save_establishment">Salvar Estabelecimento</string>
+    <string name="phone">Telefone</string>
+    <string name="location">Localização</string>
 </resources>
