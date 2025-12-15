@@ -71,3 +71,5 @@ https://github.com/user-attachments/assets/e657b2ee-7852-4490-896f-2a60b32c30f8
 
 https://github.com/user-attachments/assets/fe47bb97-6390-4382-8f80-32433c137afc
 
+## 📷 Vídeo de Explicação do Código
+
