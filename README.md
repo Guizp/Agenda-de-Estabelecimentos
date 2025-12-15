@@ -63,8 +63,11 @@ Inglês:
 1 - Demonstração Geral
 
 
-https://github.com/Guizp/Agenda-de-Estabelecimentos/issues/1#issue-3728386743
+https://github.com/user-attachments/assets/e657b2ee-7852-4490-896f-2a60b32c30f8
 
 
 2 - Demonstração do Cadastro
+
+
+https://github.com/user-attachments/assets/fe47bb97-6390-4382-8f80-32433c137afc
 
