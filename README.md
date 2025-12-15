@@ -60,6 +60,11 @@ Inglês:
 
 ## 📹 Vídeos de Demonstração do App
 
+1 - Demonstração Geral
 
 
+https://github.com/Guizp/Agenda-de-Estabelecimentos/issues/1#issue-3728386743
+
+
+2 - Demonstração do Cadastro
 
